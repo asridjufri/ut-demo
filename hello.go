@@ -12,7 +12,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 func trinixHandler(w http.ResponseWriter, r * http.Request){
 	fmt.Println("/trinix")
-	fmt.Fprintf(w, "Hi Iam Trinix Systemsss %s!", r.URL.Path[1:])	
+	fmt.Fprintf(w, "Hi Iam Trinix Systemsssas %s!", r.URL.Path[1:])	
 }
 func utHandler(w http.ResponseWriter, r * http.Request){
 	fmt.Println("/ut")
