@@ -6,5 +6,9 @@ stages:
       buildContext: .
       tag: ut-demo
       pushRemote: true
-      registry: 127.0.0.1:34610
+      registry: index.docker.io
+- name: deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
 timeout: 60
