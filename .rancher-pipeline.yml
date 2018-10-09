@@ -1,1 +1,10 @@
+stages:
+- name: compile
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: ut-demo
+      pushRemote: true
+      registry: 127.0.0.1:34610
 timeout: 60
