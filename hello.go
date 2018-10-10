@@ -18,7 +18,7 @@ func utHandler(w http.ResponseWriter, r * http.Request){
 	fmt.Println("/ut")
 	fmt.Fprintf(w, "Hi Iam UT %s!", r.URL.Path[1:])	
 }
-func utHandler(w http.ResponseWriter, r * http.Request){
+func lawenconHandler(w http.ResponseWriter, r * http.Request){
 	fmt.Println("/lawencon")
 	fmt.Fprintf(w, "Hi Iam Lawencon  your path is %s!", r.URL.Path[1:])	
 }
@@ -28,6 +28,7 @@ func main() {
     http.HandleFunc("/", handler)
     http.HandleFunc("/trinix", trinixHandler)
     http.HandleFunc("/ut", utHandler)
+    http.HandleFunc("/lawencon", lawenconHandler)
     fmt.Println("Listen at port 9000")
     log.Fatal(http.ListenAndServe(":9000", nil))
 
