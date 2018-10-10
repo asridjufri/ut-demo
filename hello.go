@@ -18,6 +18,10 @@ func utHandler(w http.ResponseWriter, r * http.Request){
 	fmt.Println("/ut")
 	fmt.Fprintf(w, "Hi Iam UT %s!", r.URL.Path[1:])	
 }
+func utHandler(w http.ResponseWriter, r * http.Request){
+	fmt.Println("/lawencon")
+	fmt.Fprintf(w, "Hi Iam Lawencon  your path is %s!", r.URL.Path[1:])	
+}
 
 func main() {
 	fmt.Println("Initialization ...")
