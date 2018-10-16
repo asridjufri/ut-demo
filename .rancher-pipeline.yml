@@ -3,18 +3,9 @@ stages:
   steps:
   - runScriptConfig:
       image: gcc:latest
-      shellScript: git status
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: asridjufri/ut-demo:stable
-      pushRemote: true
-      registry: index.docker.io
-- name: deploy
-  steps:
-  - applyYamlConfig:
-      path: ./deployment.yaml
-    when:
-      branch: {}
-      event: {}
+      shellScript: |-
+        ls -lah
+        git status
+        git fetch --all --tags --prune
+        git checkout tags/stable -b master
 timeout: 60
