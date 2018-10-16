@@ -4,9 +4,13 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: asridjufri/ut-demo
+      tag: asridjufri/ut-demo:stable
       pushRemote: true
       registry: index.docker.io
+    when:
+      event:
+        include:
+        - tag
 - name: deploy
   steps:
   - applyYamlConfig:
