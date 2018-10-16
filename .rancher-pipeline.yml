@@ -10,6 +10,7 @@ stages:
         git checkout tags/stable -b master
         touch asri
         echo "ini dari script yang pertama" >> asri
+        docker ps
   - runScriptConfig:
       image: golang:latest
       shellScript: |-
