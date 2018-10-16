@@ -18,6 +18,14 @@ stages:
         ls -lah
         echo "------ cat asri file"
         cat ./asri
+  - publishImageConfig:
+      dockerfilePath: ./deployment/Dockerfile
+      buildContext: .
+      tag: asridjufri/ut-demo:stable
+      pushRemote: true
+      registry: index.docker.io
+- name: deploy
+  steps:
   - applyYamlConfig:
-      path: ./deployment.yaml
+      path: ./deployment/deployment.yaml
 timeout: 60
