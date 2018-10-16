@@ -6,8 +6,7 @@ stages:
       shellScript: |-
         ls -lah
         git status
-        git fetch --all --tags --prune
-        git checkout tags/stable -b master
+
         touch asri
         echo "ini dari script yang pertama" >> asri
         echo "hai asri" > ./deployment.yml
