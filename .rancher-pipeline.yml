@@ -15,4 +15,8 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+    when:
+      event:
+        include:
+        - tag
 timeout: 60
