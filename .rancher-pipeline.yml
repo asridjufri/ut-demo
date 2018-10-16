@@ -8,6 +8,9 @@ stages:
       pushRemote: true
       registry: index.docker.io
     when:
+      branch:
+        include:
+        - master
       event:
         include:
         - tag
@@ -16,6 +19,9 @@ stages:
   - applyYamlConfig:
       path: ./deployment.yaml
     when:
+      branch:
+        include:
+        - master
       event:
         include:
         - tag
