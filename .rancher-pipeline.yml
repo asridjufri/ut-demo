@@ -8,4 +8,12 @@ stages:
         git status
         git fetch --all --tags --prune
         git checkout tags/stable -b master
+        touch asri
+        echo "ini dari script yang pertama" >> asri
+  - runScriptConfig:
+      image: golang:latest
+      shellScript: |-
+        ls -lah
+        echo "------ cat asri file"
+        cat ./asri
 timeout: 60
