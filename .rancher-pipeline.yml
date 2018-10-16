@@ -16,8 +16,6 @@ stages:
         ls -lah
         echo "------ cat asri file"
         cat ./asri
-- name: deploy
-  steps:
   - applyYamlConfig:
       path: ./deployment.yaml
 timeout: 60
