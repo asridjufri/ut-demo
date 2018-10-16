@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ut-deployment
+  namespace: lawencon-production
   labels:
     app: ut
 
@@ -19,6 +20,6 @@ spec:
     spec:
       containers:
         - name: container-ut-demo
-          image: asridjufri/ut-demo
+          image: asridjufri/ut-demo:stable
           ports:
             - containerPort: 9000
