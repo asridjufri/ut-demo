@@ -1,28 +1,20 @@
 stages:
 - name: compile
   steps:
+  - runScriptConfig:
+      image: gcc:latest
+      shellScript: git status
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: asridjufri/ut-demo:stable
       pushRemote: true
       registry: index.docker.io
-    when:
-      branch:
-        include:
-        - master
-      event:
-        include:
-        - tag
 - name: deploy
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
     when:
-      branch:
-        include:
-        - master
-      event:
-        include:
-        - tag
+      branch: {}
+      event: {}
 timeout: 60
