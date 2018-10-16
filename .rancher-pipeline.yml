@@ -9,7 +9,9 @@ stages:
 
         touch asri
         echo "ini dari script yang pertama" >> asri
-        echo "hai asri" > ./deployment.yml
+        echo "deployment sebelum di edit"
+
+        echo "hai asri" > ./deployment.yaml
   - runScriptConfig:
       image: golang:latest
       shellScript: |-
